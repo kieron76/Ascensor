@@ -2,5 +2,5 @@
 
 class HTTP404Exception extends Exception {
 
-    protected $message = "Oops, cant find that page";
+    protected t$message = "Oops, cant find that page";
 }
