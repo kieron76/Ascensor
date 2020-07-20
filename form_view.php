@@ -35,7 +35,11 @@
             <div><textarea name="message"></textarea></div>
         </div>
         <div>
+            <div><input type="checkbox" name="subscribe" /></div>
+            <div>Subscribe to newsletter</div>
+        <div>
             <input type="submit" />
+        </div>
     </div>
     </form>
 </body>
