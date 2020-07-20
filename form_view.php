@@ -16,7 +16,7 @@
     <p>Please fill in our form to subscribe to our newsletter:</p>
 
 
-    <form action="" method="post" />
+    <form action="form/handle" method="post" />
     <div>
         <div>
             <div>Name:</div>
@@ -34,6 +34,8 @@
             <div>Message:</div>
             <div><textarea name="message"></textarea></div>
         </div>
+        <div>
+            <input type="submit" />
     </div>
     </form>
 </body>

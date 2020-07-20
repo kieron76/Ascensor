@@ -16,6 +16,7 @@ class Router {
         $uri;
         $controller;
         $class;
+        $uc_controller;
 
 
         $uri = explode("/", $_SERVER["REQUEST_URI"]);
@@ -30,9 +31,10 @@ class Router {
                 break;
             case 3:
                 if (!empty($uri[2])) {
-                    if (file_exists("classes/Controllers/{$uri[2]}Controller.php")) {
-                        require("classes/Controllers/{$uri[2]}Controller.php");
-                        $class = $uri[2]."Controller";
+                    $uc_controller = ucwords($uri[2]);
+                    if (file_exists("classes/Controllers/{$uc_controller}Controller.php")) {
+                        require("classes/Controllers/{$uc_controller}Controller.php");
+                        $class = $uc_controller."Controller";
                         $controller = new $class();
                         $controller->index();
                     } else {
@@ -46,9 +48,10 @@ class Router {
                 break;
             case 4;
                 if (!empty($uri[3])) {
-                    if (file_exists("classes/Controllers/{$uri[2]}Controller.php")) {
-                        require("classes/Controllers/{$uri[2]}Controller.php");
-                        $class = $uri[2]."Controller";
+                    $uc_controller = ucwords($uri[2]);
+                    if (file_exists("classes/Controllers/{$uc_controller}Controller.php")) {
+                        require("classes/Controllers/{$uc_controller}Controller.php");
+                        $class = $uc_controller."Controller";
                         $controller = new $class();
                         $controller->$uri[3]();
                     } else {
